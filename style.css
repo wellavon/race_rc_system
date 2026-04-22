@@ -379,23 +379,51 @@ body {
     transform: translateY(-3px);
 }
 
+.social-btn:active {
+    transform: scale(0.97);
+}
+
 .social-btn i {
     font-size: 1.3rem;
+    flex-shrink: 0;
 }
 
 @media (max-width: 480px) {
     .social-buttons-container {
-        flex-direction: column;
+        flex-direction: row;
         gap: 15px;
-        align-items: center;
+        justify-content: center;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .social-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 0.8rem;
+        width: 55px;
+        height: 55px;
+        font-size: 0.7rem;
         gap: 2px;
-        letter-spacing: 0.3px;
+        letter-spacing: 0.1px;
+        flex-shrink: 0;
+    }
+
+    .social-btn i {
+        font-size: 1.35rem !important;
+    }
+
+    .social-btn:active {
+        transform: scale(0.95) !important;
+        transition: transform 0.1s ease;
+    }
+
+    .social-buttons-container::-webkit-scrollbar {
+        height: 3px;
+    }
+
+    .social-buttons-container::-webkit-scrollbar-thumb {
+        background: rgba(0, 255, 0, 0.5);
+        border-radius: 2px;
     }
 }
 
@@ -917,7 +945,7 @@ body {
     }
 }
 
-/* Small mobile fixes */
+/* Small mobile fixes + social improvements */
 @media (max-width: 576px) {
     .racers-container {
         grid-template-columns: 1fr;
@@ -936,6 +964,8 @@ body {
         width: 100%;
         max-width: 300px;
     }
+
+
 }
 
 /* Кнопка "Как это работает?" */
