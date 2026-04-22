@@ -1,0 +1,1419 @@
+/* Сброс и базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom fonts */
+@font-face {
+    font-family: 'TerribleCursive';
+    src: url('TerribleCursive.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ZenDotsKir';
+    src: url('ZenDotsKir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'ZenDotsKir', sans-serif;
+    background-color: #000;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Интенсивная матрица на фоне */
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.matrix-digit {
+    position: absolute;
+    color: rgba(0, 255, 0, 0.15);
+    font-family: 'Orbitron', monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    animation: matrix-fall linear infinite;
+    text-shadow: none;
+    opacity: 0.25;
+}
+
+@keyframes matrix-fall {
+    0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    90% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Следы колес */
+.tire-track {
+    position: fixed;
+    width: 300px;
+    height: 120px;
+    background-image:
+        repeating-linear-gradient(90deg,
+            transparent,
+            transparent 20px,
+            rgba(255, 255, 255, 0.05) 20px,
+            rgba(255, 255, 255, 0.05) 40px);
+    z-index: 0;
+    opacity: 0.3;
+    transform: rotate(20deg);
+}
+
+.track-1 {
+    top: 10%;
+    left: -100px;
+}
+
+.track-2 {
+    top: 50%;
+    right: -100px;
+    transform: rotate(-15deg);
+}
+
+.track-3 {
+    bottom: 20%;
+    left: 30%;
+    transform: rotate(10deg);
+}
+
+/* Клетки гоночные */
+.grid-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+}
+
+/* Основной контейнер */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Mobile container */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Шапка с логотипом */
+.header {
+    text-align: center;
+    padding: 10px 0 30px;
+    position: relative;
+}
+
+.logo {
+    display: inline-block;
+    position: relative;
+}
+
+.logo-img {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.logo-circle {
+    width: 100%;
+    height: 100%;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+}
+
+.logo-circle::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border: 3px solid #0f0;
+    border-radius: 50%;
+    box-shadow: 0 0 25px #0f0;
+}
+
+.logo-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #fff;
+    text-shadow: 0 0 10px #fff;
+}
+
+.logo-img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.logo-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 0, 0.2) 0%, transparent 70%);
+    animation: glow-pulse 3s infinite alternate;
+}
+
+@keyframes glow-pulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Кнопка назад */
+.back-btn-container {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+.back-btn {
+    padding: 12px 10px;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.back-btn:hover {
+    color: #0f0;
+    border-color: #0f0;
+    box-shadow: 0 0 15px #0f0;
+    transform: translateX(-5px);
+}
+
+/* Основное содержимое */
+.main-content {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    padding: 40px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.15);
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Страницы внутри main-content */
+.about-page,
+.ranking-page {
+    padding-top: 20px;
+}
+
+/* Главная страница */
+.home-page {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.welcome-text {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.menu-btn {
+    padding: 20px 40px;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    min-width: 250px;
+}
+
+.menu-btn:hover {
+    color: #0f0;
+    border-color: #0f0;
+    box-shadow: 0 0 20px #0f0;
+    transform: translateY(-5px);
+}
+
+.menu-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.menu-btn:hover::before {
+    left: 100%;
+}
+
+/* Social buttons */
+.social-buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.social-btn {
+    width: 70px;
+    height: 70px;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-btn:hover {
+    color: #0f0;
+    border-color: #0f0;
+    box-shadow: 0 0 15px #0f0;
+    transform: translateY(-3px);
+}
+
+.social-btn i {
+    font-size: 1.3rem;
+}
+
+@media (max-width: 480px) {
+    .social-buttons-container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .social-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8rem;
+        gap: 2px;
+        letter-spacing: 0.3px;
+    }
+}
+
+/* Страница "О системе" */
+.about-page,
+.ranking-page {
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
+    /* Добавляем отступ сверху, чтобы кнопка "назад" не перекрывала контент */
+}
+
+.page-title {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.system-info {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.1);
+}
+
+.system-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.system-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.system-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #0f0;
+    font-size: 1.3rem;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+}
+
+.system-list li.system-list-main {
+    text-align: center;
+    padding-left: 0;
+    font-weight: 600;
+    color: #fff;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.3);
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+}
+
+.system-list li.system-list-main::before {
+    display: none;
+}
+
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.mission-card {
+    background-color: rgba(20, 20, 20, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: perspective(500px) rotateY(0deg);
+}
+
+.mission-card:hover {
+    transform: perspective(500px) rotateY(10deg) translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7);
+    border-color: rgba(0, 255, 0, 0.5);
+}
+
+.mission-img {
+    width: 100%;
+    height: 150px;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #333;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.mission-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mission-link {
+    display: block;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #0f0;
+    text-decoration: none;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.mission-link:hover {
+    background-color: rgba(0, 30, 0, 0.9);
+    text-shadow: 0 0 10px #0f0;
+}
+
+/* Страница ранга */
+.ranking-info {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+.racers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+/* Обновленные кривые ID карточки */
+.id-card {
+    background-color: rgba(20, 20, 20, 0.95);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    transform: perspective(500px) rotateY(5deg) rotateX(2deg) rotateZ(-1deg);
+    /* Кривизна */
+    height: 280px;
+    /* Укороченная длина */
+    overflow: hidden;
+}
+
+.id-card:nth-child(even) {
+    transform: perspective(500px) rotateY(-5deg) rotateX(-2deg) rotateZ(1deg);
+    /* Чередующаяся кривизна */
+}
+
+.id-card:hover {
+    border-color: rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
+    transform: perspective(500px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateY(-10px);
+    /* Выравнивание при наведении */
+}
+
+.id-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #0f0, #000);
+}
+
+/* Логотип в левом верхнем углу */
+.card-logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 130px;
+    height: 35px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #0f0;
+    background-color: #000;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Фото рэйсера под логотипом */
+.racer-photo-container {
+    position: absolute;
+    top: 65px;
+    /* Под логотипом */
+    left: 15px;
+    width: 130px;
+    height: 165px;
+    background-color: #111;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.racer-photo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.racer-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Информация о рэйсере в один столбик справа */
+.racer-info {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 180px;
+}
+
+.info-item {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.info-label {
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.info-value {
+    color: #fff;
+    font-weight: 700;
+    text-align: right;
+}
+
+.class-value {
+    color: #0f0;
+    text-shadow: 0 0 5px #0f0;
+}
+
+/* Подпись рэйсера в правом нижнем углу */
+.racer-signature {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-family: 'TerribleCursive', cursive;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.7);
+    transform: rotate(-5deg);
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Декоративные элементы на карточках */
+.id-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    z-index: 1;
+}
+
+/* Неоновые полосы на карточках */
+.neon-stripe {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #0f0, transparent);
+    opacity: 0.5;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .racers-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .logo-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .logo-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .logo-img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logo-text {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+
+    .logo-circle {
+        border-width: 3px;
+    }
+
+    .logo-circle::before {
+        border-width: 2px;
+        box-shadow: 0 0 15px #0f0;
+    }
+
+    .welcome-text {
+        font-size: 1rem;
+        padding: 12px;
+        line-height: 1.4;
+        margin-bottom: 25px;
+    }
+
+    .menu-btn {
+        min-width: 180px;
+        font-size: 0.9rem;
+        padding: 12px 20px;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 25px;
+        align-items: center;
+    }
+
+    .missions-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 15px;
+    }
+
+    .mission-card {
+        transform: none;
+        height: auto;
+    }
+
+    .mission-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .mission-img {
+        height: 100px;
+    }
+
+    .mission-link {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+
+    .page-title {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+
+    .system-info {
+        font-size: 0.9rem;
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .ranking-info {
+        font-size: 0.9rem;
+        padding: 12px;
+        margin-bottom: 20px;
+    }
+
+    .how-it-works-btn {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+    }
+
+    .racers-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .back-btn {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    .id-card {
+        height: auto;
+        min-height: 180px;
+        padding: 12px;
+        transform: none !important;
+    }
+
+    .id-card:hover {
+        transform: translateY(-5px) !important;
+    }
+
+    .card-logo {
+        width: 120px;
+        height: 24px;
+        font-size: 0.6rem;
+        top: 20px;
+        left: 8px;
+    }
+
+    .racer-photo-container {
+        width: 120px;
+        height: 160px;
+        top: 55px;
+        left: 8px;
+        font-size: 1.5rem;
+    }
+
+    .racer-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: calc(100% - 140px);
+        flex-direction: column;
+        gap: 2px;
+        margin-top: 8px;
+        margin-left: 140px;
+    }
+
+    .info-item {
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .info-label {
+        font-size: 0.85rem;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    .info-value {
+        font-size: 0.9rem;
+        text-align: right;
+    }
+
+    .racer-signature {
+        font-size: 2rem;
+        bottom: 8px;
+        right: 12px;
+    }
+
+    .neon-stripe {
+        bottom: 6px;
+        width: 50%;
+    }
+
+    .main-content {
+        padding: 15px;
+        min-height: auto;
+    }
+
+    .about-page,
+    .ranking-page {
+        padding-top: 15px;
+    }
+}
+
+/* Small mobile fixes */
+@media (max-width: 576px) {
+    .racers-container {
+        grid-template-columns: 1fr;
+    }
+
+    .id-card {
+        height: 250px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* Кнопка "Как это работает?" */
+.how-it-works-btn {
+    padding: 15px 30px;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #0f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.how-it-works-btn:hover {
+    color: #0f0;
+    border-color: #0f0;
+    box-shadow: 0 0 20px #0f0;
+    transform: translateY(-3px);
+}
+
+.how-it-works-btn i {
+    font-size: 1.3rem;
+}
+
+/* Счётчик рэйсеров */
+.racers-counter {
+    margin-top: 15px;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+}
+
+.racers-counter i {
+    color: #0f0;
+    font-size: 1.2rem;
+}
+
+.counter-value {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #0f0;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* Модальное окно */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: rgba(10, 10, 10, 0.95);
+    border: 2px solid #0f0;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 255, 0, 0.3);
+    animation: modal-appear 0.3s ease;
+}
+
+@keyframes modal-appear {
+    from {
+        transform: scale(0.9) translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    color: #0f0;
+    border-color: #0f0;
+    box-shadow: 0 0 15px #0f0;
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.8rem;
+    color: #0f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    text-align: center;
+}
+
+.modal-subtitle {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.modal-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.modal-text p {
+    margin-bottom: 15px;
+}
+
+.points-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.points-list li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.points-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #0f0;
+    font-size: 1.2rem;
+}
+
+.points-list strong {
+    color: #0f0;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+/* Таблица рангов */
+.ranks-table {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-note {
+    font-size: 0.95rem;
+    color: #ff6b6b;
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: rgba(255, 107, 107, 0.1);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+}
+
+.rank-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    gap: 5px;
+}
+
+.rank-row:last-child {
+    border-bottom: none;
+}
+
+.rank-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rank-roman {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1rem;
+    color: #888;
+    font-style: italic;
+}
+
+.rank-translation {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Адаптивность модального окна */
+@media (max-width: 576px) {
+    .modal-content {
+        padding: 25px;
+        max-height: 90vh;
+    }
+
+    .modal-title {
+        font-size: 1.4rem;
+        padding-right: 30px;
+    }
+
+    .modal-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .rank-name {
+        font-size: 1rem;
+    }
+
+    .rank-roman,
+    .rank-translation {
+        font-size: 0.9rem;
+    }
+
+    .how-it-works-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Модальное окно достижений рэйсера */
+.achievements-modal-content {
+    max-width: 700px;
+    max-height: 85vh;
+}
+
+.achievements-header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(0, 255, 0, 0.3);
+}
+
+.achievements-photo {
+    width: 100px;
+    height: 130px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(0, 255, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.achievements-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.achievements-photo img.zoomed {
+    object-position: center 70%;
+    transform: scale(1.2);
+}
+
+.racer-photo img.zoomed {
+    object-position: center 70%;
+    transform: scale(1.1);
+}
+
+.achievements-info {
+    text-align: left;
+}
+
+.achievements-name {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 2rem;
+    color: #0f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.achievements-id {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.achievements-class {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.achievements-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.achievement-section {
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title i {
+    color: #0f0;
+    font-size: 1.2rem;
+}
+
+.achievement-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.achievement-item {
+    background-color: rgba(0, 30, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    border-left: 3px solid #0f0;
+    font-size: 0.95rem;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+    background-color: rgba(0, 60, 0, 0.6);
+    transform: translateX(5px);
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.achievement-item.empty {
+    color: #666;
+    border-left-color: #444;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-style: italic;
+}
+
+.wins-list {
+    grid-template-columns: 1fr;
+}
+
+.win-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0, 255, 0, 0.2), rgba(0, 0, 0, 0.3));
+}
+
+.win-place {
+    font-weight: 700;
+    color: #0f0;
+    font-size: 1.1rem;
+}
+
+.win-festival {
+    color: #fff;
+    font-style: italic;
+}
+
+/* Адаптивность модального окна достижений */
+@media (max-width: 576px) {
+    .achievements-modal-content {
+        padding: 20px;
+        max-height: 90vh;
+        max-width: 95%;
+    }
+
+    .achievements-header {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 15px;
+    }
+
+    .achievements-info {
+        text-align: left;
+        flex: 1;
+    }
+
+    .achievements-name {
+        font-size: 1.4rem;
+    }
+
+    .achievements-photo {
+        width: 140px;
+        height: 180px;
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .achievement-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+}
