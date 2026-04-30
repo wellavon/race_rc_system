@@ -573,6 +573,7 @@ body {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 /* Обновленные кривые ID карточки */
@@ -583,7 +584,7 @@ body {
     padding: 20px;
     position: relative;
     transition: all 0.3s ease;
-    transform: perspective(500px) rotateY(5deg) rotateX(2deg) rotateZ(-1deg);
+    transform: perspective(500px) rotateY(3deg) rotateX(0deg) rotateZ(-1deg);
     /* Кривизна */
     height: 280px;
     /* Укороченная длина */
@@ -591,7 +592,7 @@ body {
 }
 
 .id-card:nth-child(even) {
-    transform: perspective(500px) rotateY(-5deg) rotateX(-2deg) rotateZ(1deg);
+    transform: perspective(500px) rotateY(-3deg) rotateX(0deg) rotateZ(1deg);
     /* Чередующаяся кривизна */
 }
 
@@ -711,11 +712,15 @@ body {
     bottom: 15px;
     right: 20px;
     font-family: 'TerribleCursive', cursive;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: rgba(255, 255, 255, 0.7);
     transform: rotate(-5deg);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    line-height: 0.9;
 }
 
 /* Декоративные элементы на карточках */
