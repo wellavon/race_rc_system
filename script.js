@@ -92,8 +92,8 @@ const racersData = [
     {
         id: "2507.7",
         name: "Kento",
-        class: "", // Будет автоматически рассчитано
-        score: 0, // Будет автоматически рассчитано
+        class: "",
+        score: 0,
         photo: "kento",
         achievements: {
             projects: ["P1Harmony - Pretty Boy", "Ateez - In Your Fantasy", "XLOV - 1&Only",
@@ -111,7 +111,6 @@ const racersData = [
                 { place: 3, festival: "ANM Dance Festival (14.09.25)" },
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
-
             ],
             bonus: 500
         }
@@ -140,6 +139,67 @@ const racersData = [
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
             ],
             bonus: 100
+        }
+    },
+    {
+        id: "0404.4",
+        name: "Budilya",
+        class: "", // Будет автоматически рассчитано
+        score: 0, // Будет автоматически рассчитано
+        photo: "budilya",
+        achievements: {
+            projects: ["Ateez - In Your Fantasy", "Ateez - Shaboom", "Xikers - Superpower", "Lngshot - Saucin'", "Nexz - One Bite",
+                "Ateez - Adrenaline", "One Or Eight - Tokyo Drift"
+            ],
+            festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)", "Venom Fest (19.04.26)"],
+            wins: [
+                { place: 1, festival: "1Y (17.08.25) - Boys" },
+                { place: 2, festival: "ANM Dance Festival (8.02.26)" }
+            ]
+        }
+    },
+    {
+        id: "1312.3",
+        name: "Sai",
+        class: "", // Будет автоматически рассчитано
+        score: 0, // Будет автоматически рассчитано
+        photo: "sai",
+        achievements: {
+            projects: ["XLOV - 1&Only", "Kid Phenomenon - Party Over There", "Lngshot - Saucin'", "Ateez - Adrenaline", "One Or Eight - Tokyo Drift"],
+            festivals: ["DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)", "Venom Fest (19.04.26)"],
+            wins: [
+                { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" }
+            ]
+        }
+    },
+    {
+        id: "2710.3",
+        name: "Ana",
+        class: "", // Будет автоматически рассчитано
+        score: 0, // Будет автоматически рассчитано
+        photo: "ana",
+        achievements: {
+            projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble"],
+            festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)"],
+            wins: [
+                { place: 2, festival: "ANM Dance Festival (8.02.26)" },
+                { place: 3, festival: "Coolapalooza (22.03.26)" }
+            ]
+        }
+    },
+    {
+        id: "2401.2",
+        name: "Vanyaslay",
+        class: "", // Будет автоматически рассчитано
+        score: 0, // Будет автоматически рассчитано
+        photo: "vanyaslay",
+        achievements: {
+            projects: ["All(h)ours - Gotcha", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift"],
+            festivals: ["lll кубок Москвы (30.08.25)", "ANM Dance Festival (14.09.25)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)"],
+            wins: [
+                { place: 3, festival: "ANM Dance Festival (14.09.25)" },
+                { place: 3, festival: "Coolapalooza (22.03.26)" }
+            ]
         }
     }
 ];
@@ -182,6 +242,7 @@ function generateHomePage() {
                 <button class="menu-btn" onclick="loadContent('ranking')">
 <i class="fas fa-users"></i> рэйсеры
                 </button>
+                
             </div>
             <div class="social-buttons-container">
                 <a href="https://youtube.com/@racerccrew?si=8FXf_KD2fMxJbWgP" target="_blank" class="social-btn" rel="noopener noreferrer">
@@ -245,47 +306,59 @@ function generateAboutPage() {
 }
 
 // Генерация страницы ранга
+
+function getDisplayName(racerId) {
+    if (racerId === "2401.2") {
+        return "Vanya<br>slay";
+    }
+    const racer = racersData.find(r => r.id === racerId);
+    if (!racer) return "";
+    return racer.name;
+}
+
 function generateRankingPage() {
-    // Фильтруем рэйсеров с score >= 350 и сортируем по score (по убыванию)
     const sortedRacers = [...racersData]
         .filter(racer => racer.score >= 350)
         .sort((a, b) => b.score - a.score);
 
-    // Общее количество рэйсеров в системе
-    const totalRacersCount = racersData.length;
+    const topTwoRacers = sortedRacers.slice(0, 2);
+    const otherRacers = sortedRacers.slice(2);
 
-    let racersHTML = '';
-
-    sortedRacers.forEach((racer, index) => {
-        racersHTML += `
-            <div class="id-card" onclick="openRacerAchievements('${racer.id}')">
-                <div class="card-logo">racer card</div>
-                <div class="racer-photo-container">
-                    <div class="racer-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'minka', 'tveva'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
+    const cardHTML = (racer) => `
+        <div class="id-card" onclick="openRacerAchievements('${racer.id}')">
+            <div class="card-logo">racer card</div>
+            <div class="racer-photo-container">
+                <div class="racer-photo">
+                    <img src="${racer.photo}.png" alt="${racer.name}" ${['corey', 'minka', 'tveva', 'vanyaslay'].includes(racer.photo) ? 'class="zoomed"' : ''}>
                 </div>
-                <div class="racer-info">
-                    <div class="info-item">
-                        <span class="info-label">name:</span>
-                        <span class="info-value">${racer.name}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">id:</span>
-                        <span class="info-value">${racer.id}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">class:</span>
-                        <span class="info-value class-value">${racer.class}</span>
-                    </div>
-                    <div class="info-item">
-                        <span class="info-label">score:</span>
-                        <span class="info-value">${racer.score}</span>
-                    </div>
-                </div>
-                <div class="racer-signature">${racer.name.split(' ')[0]}</div>
-                <div class="neon-stripe"></div>
             </div>
-        `;
-    });
+            <div class="racer-info">
+                <div class="info-item">
+                    <span class="info-label">name:</span>
+                    <span class="info-value">${racer.name}</span>
+
+                </div>
+                <div class="info-item">
+                    <span class="info-label">id:</span>
+                    <span class="info-value">${racer.id}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">class:</span>
+                    <span class="info-value class-value">${racer.class}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">score:</span>
+                    <span class="info-value">${racer.score}</span>
+                </div>
+            </div>
+            <div class="racer-signature">${racer.name.split(' ')[0]}</div>
+
+            <div class="neon-stripe"></div>
+        </div>
+    `;
+
+    const topTwoHTML = topTwoRacers.map(cardHTML).join('');
+    const otherHTML = otherRacers.map(cardHTML).join('');
 
     return `
         <div class="ranking-page">
@@ -294,26 +367,21 @@ function generateRankingPage() {
                     <i class="fas fa-arrow-left"></i> Назад
                 </button>
             </div>
-            <h1 class="page-title">профайлы рэйсеров</h1>
-            <div class="ranking-info">
-                
-            </div>
+            <h2 class="page-title">менторы</h2>
             <div class="racers-container">
-                ${racersHTML}
+                ${topTwoHTML}
             </div>
-            
-            
-
-
-            <!-- Modal Достижения рэйсера -->
+            <h2 class="page-title">рэйсеры</h2>
+            <div class="racers-container">
+                ${otherHTML}
+            </div>
+            <!-- Modal remains the same -->
             <div class="modal-overlay" id="racerAchievementsModal" onclick="closeRacerAchievements(event)">
                 <div class="modal-content achievements-modal-content">
                     <button class="modal-close" onclick="closeRacerAchievements()">
                         <i class="fas fa-times"></i>
                     </button>
-                    <div id="racerAchievementsContent">
-                        <!-- Content will be dynamically generated -->
-                    </div>
+                    <div id="racerAchievementsContent"></div>
                 </div>
             </div>
         </div>
@@ -359,9 +427,10 @@ function openRacerAchievements(racerId) {
 
     const contentHTML = `
         <div class="achievements-header">
-            <div class="achievements-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'minka', 'tveva'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
+            <div class="achievements-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'minka', 'tveva', 'vanyaslay'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
             <div class="achievements-info">
-                <h2 class="achievements-name">${racer.name}</h2>
+                <h2 class="achievements-name">${getDisplayName(racer.id, false)}</h2>
+
                 <p class="achievements-id">ID: ${racer.id}</p>
                 <p class="achievements-class">${racer.class}</p>
             </div>
@@ -566,3 +635,4 @@ document.addEventListener('DOMContentLoaded', function () {
 window.addEventListener('resize', function () {
     addRandomSkew();
 });
+updateRacerScores();
