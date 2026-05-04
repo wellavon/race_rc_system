@@ -69,6 +69,7 @@ function updateRacerScores() {
 
 // Данные для сайта
 const missionData = [
+    { id: 18, name: "Миссия 18", link: "https://youtu.be/Hhrery2tIGQ?si=SxE6N9N3lJChQWb3", image: "pinky_up" },
     { id: 17, name: "Миссия 17", link: "https://youtu.be/ci8WH8tiQhg?si=78S7M2mxW3n31KIc", image: "r2r" },
     { id: 16, name: "Миссия 16", link: "https://youtu.be/h9pVcf1CuAI", image: "one_bite" },
     { id: 15, name: "Миссия 15", link: "https://youtu.be/iYpHd_194cM", image: "adrenaline" },
@@ -103,10 +104,11 @@ const racersData = [
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
-                "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)"],
+                "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)"],
             wins: [
                 { place: 1, festival: "Venom Fest (27.04.25)" },
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
+                { place: 1, festival: "1Y (3.05.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 3, festival: "ANM Dance Festival (14.09.25)" },
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
@@ -125,14 +127,16 @@ const racersData = [
             projects: ["P1Harmony - Pretty Boy", "Ateez - In Your Fantasy", "XLOV - 1&Only",
                 "Yena - Wicked Love", "Stray Kids - Ceremony", "All(h)ours - Gotcha", "Ateez - Shaboom",
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Itzy - Tunnel Vision", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
-                "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift"],
+                "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
+                      "Katseye - Pinky Up"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
-                "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)"],
+                "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)"],
             wins: [
                 { place: 1, festival: "Venom Fest (27.04.25)" },
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
+                { place: 1, festival: "1Y (3.05.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 3, festival: "ANM Dance Festival (14.09.25)" },
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
@@ -149,11 +153,13 @@ const racersData = [
         photo: "budilya",
         achievements: {
             projects: ["Ateez - In Your Fantasy", "Ateez - Shaboom", "Xikers - Superpower", "Lngshot - Saucin'", "Nexz - One Bite",
-                "Ateez - Adrenaline", "One Or Eight - Tokyo Drift"
+                "Ateez - Adrenaline", "One Or Eight - Tokyo Drift", "Katseye - Pinky Up"
             ],
-            festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)", "Venom Fest (19.04.26)"],
+            festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)", 
+                        "Venom Fest (19.04.26)", "1Y (3.05.26)"],
             wins: [
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
+                { place: 1, festival: "1Y (3.05.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" }
             ]
         }
@@ -166,8 +172,9 @@ const racersData = [
         photo: "sai",
         achievements: {
             projects: ["XLOV - 1&Only", "Kid Phenomenon - Party Over There", "Lngshot - Saucin'", "Ateez - Adrenaline", "One Or Eight - Tokyo Drift"],
-            festivals: ["DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)", "Venom Fest (19.04.26)"],
+            festivals: ["DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)"],
             wins: [
+                { place: 1, festival: "1Y (3.05.26)" },
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" }
             ]
         }
@@ -179,7 +186,7 @@ const racersData = [
         score: 0, // Будет автоматически рассчитано
         photo: "ana",
         achievements: {
-            projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble"],
+            projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "Katseye - Pinky Up"],
             festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)"],
             wins: [
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
@@ -195,8 +202,10 @@ const racersData = [
         photo: "vanyaslay",
         achievements: {
             projects: ["All(h)ours - Gotcha", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift"],
-            festivals: ["lll кубок Москвы (30.08.25)", "ANM Dance Festival (14.09.25)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)"],
+            festivals: ["lll кубок Москвы (30.08.25)", "ANM Dance Festival (14.09.25)", "Coolapalooza (22.03.26)", 
+                        "Venom Fest (19.04.26)", "1Y (3.05.26)"],
             wins: [
+                { place: 1, festival: "1Y (3.05.26)" },
                 { place: 3, festival: "ANM Dance Festival (14.09.25)" },
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
             ]
