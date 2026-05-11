@@ -69,6 +69,7 @@ function updateRacerScores() {
 
 // Данные для сайта
 const missionData = [
+    { id: 19, name: "Миссия 19", link: "https://youtu.be/ioF31qa4miw", image: "drift" },
     { id: 18, name: "Миссия 18", link: "https://youtu.be/Hhrery2tIGQ?si=SxE6N9N3lJChQWb3", image: "pinky_up" },
     { id: 17, name: "Миссия 17", link: "https://youtu.be/ci8WH8tiQhg?si=78S7M2mxW3n31KIc", image: "r2r" },
     { id: 16, name: "Миссия 16", link: "https://youtu.be/h9pVcf1CuAI", image: "one_bite" },
