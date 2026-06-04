@@ -109,7 +109,7 @@ const racersData = [
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
-                "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)"],
+                "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)"],
             wins: [
                 { place: 1, festival: "Venom Fest (27.04.25)" },
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
