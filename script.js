@@ -69,6 +69,8 @@ function updateRacerScores() {
 
 // Данные для сайта
 const missionData = [
+    { id: 24, name: "Миссия 24", link: "https://youtu.be/pCDSQeh3Wbs", image: "okay" },
+    { id: 23, name: "Миссия 23", link: "https://youtu.be/xeHsGngi98Y?si=SH2XSQdZnaJdJ19E", image: "adf" },
     { id: 22, name: "Миссия 22", link: "https://youtu.be/jjtmxb_5wmg", image: "boompala" },
     { id: 21, name: "Миссия 21", link: "https://youtu.be/SP97yMwEnBc", image: "bad" },
     { id: 20, name: "Миссия 20", link: "https://youtu.be/DXMT24Xst8c?si=88ElTD-ypwF4hCWk", image: "redred" },
@@ -105,7 +107,7 @@ const racersData = [
                 "Yena - Wicked Love", "Stray Kids - Ceremony", "All(h)ours - Gotcha", "Ateez - Shaboom",
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
-                "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala"],
+                "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -133,7 +135,7 @@ const racersData = [
                 "Yena - Wicked Love", "Stray Kids - Ceremony", "All(h)ours - Gotcha", "Ateez - Shaboom",
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Itzy - Tunnel Vision", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
-                      "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala"],
+                      "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -159,7 +161,7 @@ const racersData = [
         achievements: {
             projects: ["Ateez - In Your Fantasy", "Ateez - Shaboom", "Xikers - Superpower", "Lngshot - Saucin'", "Nexz - One Bite",
                 "Ateez - Adrenaline", "One Or Eight - Tokyo Drift", "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", 
-                "Le Sserafim - Boompala"
+                "Le Sserafim - Boompala", "Xikers - OKay"
             ],
             festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)", 
                         "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)"],
@@ -194,7 +196,7 @@ const racersData = [
         photo: "ana",
         achievements: {
             projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "Katseye - Pinky Up",
-                      "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala"],
+                      "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay"],
             festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "ADF (16.05.26)"],
             wins: [
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
@@ -209,7 +211,7 @@ const racersData = [
         score: 0, // Будет автоматически рассчитано
         photo: "vanyaslay",
         achievements: {
-            projects: ["All(h)ours - Gotcha", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift", "Le Sserafim - Boompala"],
+            projects: ["All(h)ours - Gotcha", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift", "Le Sserafim - Boompala", "Xikers - OKay"],
             festivals: ["lll кубок Москвы (30.08.25)", "ANM Dance Festival (14.09.25)", "Coolapalooza (22.03.26)", 
                         "Venom Fest (19.04.26)", "1Y (3.05.26)"],
             wins: [
