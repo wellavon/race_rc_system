@@ -108,7 +108,7 @@ const racersData = [
                 "Yena - Wicked Love", "Stray Kids - Ceremony", "All(h)ours - Gotcha", "Ateez - Shaboom",
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
-                "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay"],
+                "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -136,7 +136,8 @@ const racersData = [
                 "Yena - Wicked Love", "Stray Kids - Ceremony", "All(h)ours - Gotcha", "Ateez - Shaboom",
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Itzy - Tunnel Vision", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
-                      "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Meovv - Hit 'Em"],
+                      "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Meovv - Hit 'Em",
+                      "Ateez - BAD"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -162,7 +163,7 @@ const racersData = [
         achievements: {
             projects: ["Ateez - In Your Fantasy", "Ateez - Shaboom", "Xikers - Superpower", "Lngshot - Saucin'", "Nexz - One Bite",
                 "Ateez - Adrenaline", "One Or Eight - Tokyo Drift", "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", 
-                "Le Sserafim - Boompala", "Xikers - OKay"
+                "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD"
             ],
             festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)", 
                         "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)"],
@@ -181,7 +182,7 @@ const racersData = [
         photo: "sai",
         achievements: {
             projects: ["XLOV - 1&Only", "Kid Phenomenon - Party Over There", "Lngshot - Saucin'", "Ateez - Adrenaline", "One Or Eight - Tokyo Drift",
-                      "The Jet Boy Bangerz - Gear5 + B.A.D"],
+                      "The Jet Boy Bangerz - Gear5 + B.A.D", "Ateez - BAD"],
             festivals: ["DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)"],
             wins: [
                 { place: 1, festival: "1Y (3.05.26)" },
@@ -197,7 +198,7 @@ const racersData = [
         photo: "ana",
         achievements: {
             projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "Katseye - Pinky Up",
-                      "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay"],
+                      "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD"],
             festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "ADF (16.05.26)"],
             wins: [
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
