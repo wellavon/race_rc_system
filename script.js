@@ -70,7 +70,7 @@ function updateRacerScores() {
 // Данные для сайта
 const missionData = [
     { id: 27, name: "Миссия 27", link: "https://youtu.be/tYnYY4FtVDs", image: "rush" },
-    { id: 26, name: "Миссия 26", link: "https://youtu.be/Cc39vf6tpfY", image: "BAD" },
+    { id: 26, name: "Миссия 26", link: "https://youtu.be/Cc39vf6tpfY", image: "bad_ateez" },
     { id: 25, name: "Миссия 25", link: "https://youtu.be/k_9apuCaMVw", image: "hitem" },
     { id: 24, name: "Миссия 24", link: "https://youtu.be/pCDSQeh3Wbs", image: "okay" },
     { id: 23, name: "Миссия 23", link: "https://youtu.be/xeHsGngi98Y?si=SH2XSQdZnaJdJ19E", image: "adf" },
