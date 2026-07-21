@@ -250,6 +250,21 @@ const racersData = [
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
             ]
         }
+    },
+    {
+        id: "1012.3",
+        name: "Tokbok",
+        class: "", // Будет автоматически рассчитано
+        score: 0, // Будет автоматически рассчитано
+        photo: "tokbok",
+        achievements: {
+            projects: ["One Or Eight - Tokyo Drift", "&Team - Rush"],
+            festivals: ["1Y (3.05.26)", "K-POP COVER BATTLE (11.07.26)"],
+            wins: [
+                { place: 1, festival: "1Y (3.05.26)" },
+                { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" }
+            ]
+        }
     }
 ];
 
