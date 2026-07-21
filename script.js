@@ -256,7 +256,7 @@ const racersData = [
         name: "Tokbok",
         class: "", // Будет автоматически рассчитано
         score: 0, // Будет автоматически рассчитано
-        photo: "tokbok",
+        photo: "",
         achievements: {
             projects: ["One Or Eight - Tokyo Drift", "&Team - Rush"],
             festivals: ["1Y (3.05.26)", "K-POP COVER BATTLE (11.07.26)"],
