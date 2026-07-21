@@ -393,7 +393,7 @@ function generateRankingPage() {
             <div class="card-logo">racer card</div>
             <div class="racer-photo-container">
                 <div class="racer-photo">
-                    <img src="${racer.photo}.png" alt="${racer.name}" ${['corey', 'minka', 'tveva', 'vanyaslay'].includes(racer.photo) ? 'class="zoomed"' : ''}>
+                    <img src="${racer.photo}.png" alt="${racer.name}" ${['corey', 'minka', 'tveva', 'vanyaslay', 'tokbok'].includes(racer.photo) ? 'class="zoomed"' : ''}>
                 </div>
             </div>
             <div class="racer-info">
@@ -491,7 +491,7 @@ function openRacerAchievements(racerId) {
 
     const contentHTML = `
         <div class="achievements-header">
-            <div class="achievements-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'minka', 'tveva', 'vanyaslay'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
+            <div class="achievements-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'minka', 'tveva', 'vanyaslay', 'tokbok'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
             <div class="achievements-info">
                 <h2 class="achievements-name">${getDisplayName(racer.id, false)}</h2>
 
