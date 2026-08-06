@@ -69,6 +69,7 @@ function updateRacerScores() {
 
 // Данные для сайта
 const missionData = [
+    { id: 29, name: "Миссия 29", link: "https://youtu.be/-BQ-FOM4jFE", image: "chat" },
     { id: 28, name: "Миссия 28", link: "https://youtu.be/uEwhlGxXHOU", image: "bad2" },
     { id: 27, name: "Миссия 27", link: "https://youtu.be/tYnYY4FtVDs", image: "rush" },
     { id: 26, name: "Миссия 26", link: "https://youtu.be/Cc39vf6tpfY", image: "bad_ateez" },
@@ -112,7 +113,7 @@ const racersData = [
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
                 "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD", "&Team - Rush", 
-                       "Ateez - BAD (Wedding Ver)"],
+                       "Ateez - BAD (Wedding Ver)", "Girlset - Chat"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -146,7 +147,7 @@ const racersData = [
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Itzy - Tunnel Vision", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
                       "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Meovv - Hit 'Em",
-                      "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)"],
+                      "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)", "Girlset - Chat"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -201,7 +202,7 @@ const racersData = [
         photo: "sai",
         achievements: {
             projects: ["XLOV - 1&Only", "Kid Phenomenon - Party Over There", "Lngshot - Saucin'", "Ateez - Adrenaline", "One Or Eight - Tokyo Drift",
-                      "The Jet Boy Bangerz - Gear5 + B.A.D", "Ateez - BAD", "Ateez - BAD (Wedding Ver)"],
+                      "The Jet Boy Bangerz - Gear5 + B.A.D", "Ateez - BAD", "Ateez - BAD (Wedding Ver)", "Girlset - Chat"],
             festivals: ["DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)",
                        "VK ADF (18.07.26)"],
             wins: [
@@ -220,7 +221,7 @@ const racersData = [
         achievements: {
             projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "Katseye - Pinky Up",
                       "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD", "&Team - Rush",
-                      "Ateez - BAD (Wedding Ver)"],
+                      "Ateez - BAD (Wedding Ver)", "Girlset - Chat"],
             festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)", "ANM Dance Festival (28.06.26)",
                        "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)"],
             wins: [
