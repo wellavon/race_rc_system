@@ -122,7 +122,7 @@ const racersData = [
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
                 "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)",
                        "ANM Dance Festival (28.06.26)", "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "1Y (30.08.26) - Solo/Duo with team",
-                        "1Y (30.08.26) - Who's next"]
+                        "1Y (30.08.26) - Who's next"],
             wins: [
                 { place: 1, festival: "Venom Fest (27.04.25)" },
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
