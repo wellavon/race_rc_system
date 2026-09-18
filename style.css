@@ -1,11 +1,13 @@
-/* Сброс и базовые стили */
+/* ============================================================
+   СБРОС И БАЗА
+   ============================================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Custom fonts */
 @font-face {
     font-family: 'TerribleCursive';
     src: url('TerribleCursive.otf') format('opentype');
@@ -20,6 +22,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'NitroChargersPersonalUsed-nR6v4';
+    src: url('NitroChargersPersonalUsed-nR6v4.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: 'ZenDotsKir', sans-serif;
     background-color: #000;
@@ -29,7 +38,10 @@ body {
     position: relative;
 }
 
-/* Интенсивная матрица на фоне */
+/* ============================================================
+   ФОН
+   ============================================================ */
+
 .matrix-bg {
     position: fixed;
     top: 0;
@@ -48,31 +60,16 @@ body {
     font-size: 2rem;
     font-weight: 900;
     animation: matrix-fall linear infinite;
-    text-shadow: none;
     opacity: 0.25;
 }
 
 @keyframes matrix-fall {
-    0% {
-        transform: translateY(-100px) rotate(0deg);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.9;
-    }
-
-    90% {
-        opacity: 0.9;
-    }
-
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
+    0%   { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.9; }
+    90%  { opacity: 0.9; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
 }
 
-/* Следы колес */
 .tire-track {
     position: fixed;
     width: 300px;
@@ -88,24 +85,10 @@ body {
     transform: rotate(20deg);
 }
 
-.track-1 {
-    top: 10%;
-    left: -100px;
-}
+.track-1 { top: 10%; left: -100px; }
+.track-2 { top: 50%; right: -100px; transform: rotate(-15deg); }
+.track-3 { bottom: 20%; left: 30%; transform: rotate(10deg); }
 
-.track-2 {
-    top: 50%;
-    right: -100px;
-    transform: rotate(-15deg);
-}
-
-.track-3 {
-    bottom: 20%;
-    left: 30%;
-    transform: rotate(10deg);
-}
-
-/* Клетки гоночные */
 .grid-pattern {
     position: fixed;
     top: 0;
@@ -119,7 +102,10 @@ body {
     z-index: 0;
 }
 
-/* Основной контейнер */
+/* ============================================================
+   КОНТЕЙНЕР И ЛОГОТИП
+   ============================================================ */
+
 .container {
     position: relative;
     z-index: 1;
@@ -128,14 +114,6 @@ body {
     padding: 20px;
 }
 
-/* Mobile container */
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-}
-
-/* Шапка с логотипом */
 .header {
     text-align: center;
     padding: 10px 0 30px;
@@ -176,19 +154,6 @@ body {
     box-shadow: 0 0 25px #0f0;
 }
 
-.logo-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.8rem;
-    font-weight: 900;
-    letter-spacing: 5px;
-    color: #fff;
-    text-shadow: 0 0 10px #fff;
-}
-
 .logo-img-text {
     position: absolute;
     top: 50%;
@@ -212,16 +177,14 @@ body {
 }
 
 @keyframes glow-pulse {
-    0% {
-        opacity: 0.3;
-    }
-
-    100% {
-        opacity: 0.7;
-    }
+    0%   { opacity: 0.3; }
+    100% { opacity: 0.7; }
 }
 
-/* Кнопка назад */
+/* ============================================================
+   КНОПКА НАЗАД
+   ============================================================ */
+
 .back-btn-container {
     position: relative;
     z-index: 10;
@@ -230,7 +193,7 @@ body {
 }
 
 .back-btn {
-    padding: 12px 10px;
+    padding: 12px 20px;
     font-family: 'ZenDotsKir', sans-serif;
     font-size: 1rem;
     font-weight: 600;
@@ -254,7 +217,10 @@ body {
     transform: translateX(-5px);
 }
 
-/* Основное содержимое */
+/* ============================================================
+   ОСНОВНОЙ КОНТЕНТ
+   ============================================================ */
+
 .main-content {
     background-color: rgba(0, 0, 0, 0.7);
     border-radius: 15px;
@@ -267,13 +233,27 @@ body {
     overflow: hidden;
 }
 
-/* Страницы внутри main-content */
 .about-page,
 .ranking-page {
-    padding-top: 20px;
+    text-align: center;
+    position: relative;
+    padding-top: 80px;
 }
 
-/* Главная страница */
+.page-title {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+/* ============================================================
+   ГЛАВНАЯ
+   ============================================================ */
+
 .home-page {
     text-align: center;
     padding: 30px 0;
@@ -341,7 +321,6 @@ body {
     left: 100%;
 }
 
-/* Social buttons */
 .social-buttons-container {
     display: flex;
     justify-content: center;
@@ -388,63 +367,9 @@ body {
     flex-shrink: 0;
 }
 
-@media (max-width: 480px) {
-    .social-buttons-container {
-        flex-direction: row;
-        gap: 15px;
-        justify-content: center;
-        flex-wrap: nowrap;
-        padding: 10px 0;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .social-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 0.7rem;
-        gap: 2px;
-        letter-spacing: 0.1px;
-        flex-shrink: 0;
-    }
-
-    .social-btn i {
-        font-size: 1.35rem !important;
-    }
-
-    .social-btn:active {
-        transform: scale(0.95) !important;
-        transition: transform 0.1s ease;
-    }
-
-    .social-buttons-container::-webkit-scrollbar {
-        height: 3px;
-    }
-
-    .social-buttons-container::-webkit-scrollbar-thumb {
-        background: rgba(0, 255, 0, 0.5);
-        border-radius: 2px;
-    }
-}
-
-/* Страница "О системе" */
-.about-page,
-.ranking-page {
-    text-align: center;
-    position: relative;
-    padding-top: 80px;
-    /* Добавляем отступ сверху, чтобы кнопка "назад" не перекрывала контент */
-}
-
-.page-title {
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
+/* ============================================================
+   О СИСТЕМЕ + ПОРТФОЛИО
+   ============================================================ */
 
 .system-info {
     font-size: 1.4rem;
@@ -467,8 +392,7 @@ body {
 }
 
 .system-list li {
-    padding: 12px 0;
-    padding-left: 30px;
+    padding: 12px 0 12px 30px;
     position: relative;
     line-height: 1.5;
 }
@@ -509,7 +433,6 @@ body {
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    transform: perspective(500px) rotateY(0deg);
 }
 
 .mission-card:hover {
@@ -554,19 +477,9 @@ body {
     text-shadow: 0 0 10px #0f0;
 }
 
-/* Страница ранга */
-.ranking-info {
-    font-size: 1.3rem;
-    line-height: 1.6;
-    margin-bottom: 50px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-}
+/* ============================================================
+   РЭЙСЕРЫ (из старой версии — фото НЕ обрезаются)
+   ============================================================ */
 
 .racers-container {
     display: grid;
@@ -576,7 +489,6 @@ body {
     margin-bottom: 50px;
 }
 
-/* Обновленные кривые ID карточки */
 .id-card {
     background-color: rgba(20, 20, 20, 0.95);
     border-radius: 15px;
@@ -585,22 +497,18 @@ body {
     position: relative;
     transition: all 0.3s ease;
     transform: perspective(500px) rotateY(3deg) rotateX(0deg) rotateZ(-1deg);
-    /* Кривизна */
     height: 280px;
-    /* Укороченная длина */
     overflow: hidden;
 }
 
 .id-card:nth-child(even) {
     transform: perspective(500px) rotateY(-3deg) rotateX(0deg) rotateZ(1deg);
-    /* Чередующаяся кривизна */
 }
 
 .id-card:hover {
     border-color: rgba(0, 255, 0, 0.5);
     box-shadow: 0 0 25px rgba(0, 255, 0, 0.3);
     transform: perspective(500px) rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateY(-10px);
-    /* Выравнивание при наведении */
 }
 
 .id-card::before {
@@ -613,7 +521,6 @@ body {
     background: linear-gradient(to right, #0f0, #000);
 }
 
-/* Логотип в левом верхнем углу */
 .card-logo {
     position: absolute;
     top: 15px;
@@ -635,11 +542,9 @@ body {
     letter-spacing: 2px;
 }
 
-/* Фото рэйсера под логотипом */
 .racer-photo-container {
     position: absolute;
     top: 65px;
-    /* Под логотипом */
     left: 15px;
     width: 130px;
     height: 165px;
@@ -669,7 +574,11 @@ body {
     border-radius: 6px;
 }
 
-/* Информация о рэйсере в один столбик справа */
+.racer-photo img.zoomed {
+    object-position: center 70%;
+    transform: scale(1.1);
+}
+
 .racer-info {
     position: absolute;
     top: 20px;
@@ -706,7 +615,6 @@ body {
     text-shadow: 0 0 5px #0f0;
 }
 
-/* Подпись рэйсера в правом нижнем углу */
 .racer-signature {
     position: absolute;
     bottom: 15px;
@@ -723,19 +631,6 @@ body {
     line-height: 0.9;
 }
 
-/* Декоративные элементы на карточках */
-.id-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 30px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    z-index: 1;
-}
-
-/* Неоновые полосы на карточках */
 .neon-stripe {
     position: absolute;
     bottom: 10px;
@@ -746,293 +641,10 @@ body {
     opacity: 0.5;
 }
 
-/* Адаптивность */
-@media (max-width: 992px) {
-    .racers-container {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    }
-}
+/* ============================================================
+   МОДАЛКА ДОСТИЖЕНИЙ
+   ============================================================ */
 
-@media (max-width: 768px) {
-    .header {
-        padding-top: 20px;
-        padding-bottom: 20px;
-    }
-
-    .logo-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    .logo-text {
-        font-size: 1.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .header {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .logo-img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .logo-text {
-        font-size: 1.4rem;
-        letter-spacing: 2px;
-    }
-
-    .logo-circle {
-        border-width: 3px;
-    }
-
-    .logo-circle::before {
-        border-width: 2px;
-        box-shadow: 0 0 15px #0f0;
-    }
-
-    .welcome-text {
-        font-size: 1rem;
-        padding: 12px;
-        line-height: 1.4;
-        margin-bottom: 25px;
-    }
-
-    .menu-btn {
-        min-width: 180px;
-        font-size: 0.9rem;
-        padding: 12px 20px;
-        width: 100%;
-        max-width: 260px;
-    }
-
-    .buttons-container {
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 25px;
-        align-items: center;
-    }
-
-    .missions-grid {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 15px;
-    }
-
-    .mission-card {
-        transform: none;
-        height: auto;
-    }
-
-    .mission-card:hover {
-        transform: translateY(-3px);
-    }
-
-    .mission-img {
-        height: 100px;
-    }
-
-    .mission-link {
-        padding: 10px;
-        font-size: 0.8rem;
-    }
-
-    .page-title {
-        font-size: 1.4rem;
-        margin-bottom: 15px;
-    }
-
-    .system-info {
-        font-size: 0.9rem;
-        padding: 12px;
-        margin-bottom: 20px;
-    }
-
-    .ranking-info {
-        font-size: 0.9rem;
-        padding: 12px;
-        margin-bottom: 20px;
-    }
-
-    .how-it-works-btn {
-        font-size: 0.85rem;
-        padding: 8px 15px;
-    }
-
-    .racers-container {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .back-btn {
-        padding: 8px 15px;
-        font-size: 0.85rem;
-    }
-
-    .id-card {
-        height: auto;
-        min-height: 180px;
-        padding: 12px;
-        transform: none !important;
-    }
-
-    .id-card:hover {
-        transform: translateY(-5px) !important;
-    }
-
-    .card-logo {
-        width: 120px;
-        height: 24px;
-        font-size: 0.6rem;
-        top: 20px;
-        left: 8px;
-    }
-
-    .racer-photo-container {
-        width: 120px;
-        height: 160px;
-        top: 55px;
-        left: 8px;
-        font-size: 1.5rem;
-    }
-
-    .racer-info {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: calc(100% - 140px);
-        flex-direction: column;
-        gap: 2px;
-        margin-top: 8px;
-        margin-left: 140px;
-    }
-
-    .info-item {
-        font-size: 0.9rem;
-        padding-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .info-label {
-        font-size: 0.85rem;
-        margin-right: 10px;
-        flex-shrink: 0;
-    }
-
-    .info-value {
-        font-size: 0.9rem;
-        text-align: right;
-    }
-
-    .racer-signature {
-        font-size: 2rem;
-        bottom: 8px;
-        right: 12px;
-    }
-
-    .neon-stripe {
-        bottom: 6px;
-        width: 50%;
-    }
-
-    .main-content {
-        padding: 15px;
-        min-height: auto;
-    }
-
-    .about-page,
-    .ranking-page {
-        padding-top: 15px;
-    }
-}
-
-/* Small mobile fixes + social improvements */
-@media (max-width: 576px) {
-    .racers-container {
-        grid-template-columns: 1fr;
-    }
-
-    .id-card {
-        height: 250px;
-    }
-
-    .buttons-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .menu-btn {
-        width: 100%;
-        max-width: 300px;
-    }
-
-
-}
-
-/* Кнопка "Как это работает?" */
-.how-it-works-btn {
-    padding: 15px 30px;
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    background-color: #000;
-    color: #fff;
-    border: 2px solid #0f0;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.how-it-works-btn:hover {
-    color: #0f0;
-    border-color: #0f0;
-    box-shadow: 0 0 20px #0f0;
-    transform: translateY(-3px);
-}
-
-.how-it-works-btn i {
-    font-size: 1.3rem;
-}
-
-/* Счётчик рэйсеров */
-.racers-counter {
-    margin-top: 15px;
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 1.1rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    border: 1px solid rgba(0, 255, 0, 0.3);
-}
-
-.racers-counter i {
-    color: #0f0;
-    font-size: 1.2rem;
-}
-
-.counter-value {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #0f0;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-/* Модальное окно */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1071,15 +683,8 @@ body {
 }
 
 @keyframes modal-appear {
-    from {
-        transform: scale(0.9) translateY(-20px);
-        opacity: 0;
-    }
-
-    to {
-        transform: scale(1) translateY(0);
-        opacity: 1;
-    }
+    from { transform: scale(0.9) translateY(-20px); opacity: 0; }
+    to   { transform: scale(1) translateY(0); opacity: 1; }
 }
 
 .modal-close {
@@ -1107,156 +712,6 @@ body {
     transform: rotate(90deg);
 }
 
-.modal-title {
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 1.8rem;
-    color: #0f0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    text-align: center;
-}
-
-.modal-subtitle {
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 1.4rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-}
-
-.modal-text {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #fff;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.modal-text p {
-    margin-bottom: 15px;
-}
-
-.points-list {
-    list-style: none;
-    padding: 0;
-    text-align: left;
-    display: inline-block;
-    margin: 0 auto;
-}
-
-.points-list li {
-    padding: 8px 0;
-    padding-left: 25px;
-    position: relative;
-}
-
-.points-list li::before {
-    content: '▸';
-    position: absolute;
-    left: 0;
-    color: #0f0;
-    font-size: 1.2rem;
-}
-
-.points-list strong {
-    color: #0f0;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-}
-
-/* Таблица рангов */
-.ranks-table {
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.modal-note {
-    font-size: 0.95rem;
-    color: #ff6b6b;
-    text-align: center;
-    font-style: italic;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: rgba(255, 107, 107, 0.1);
-    border-radius: 5px;
-    border: 1px solid rgba(255, 107, 107, 0.3);
-}
-
-.rank-row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-    gap: 5px;
-}
-
-.rank-row:last-child {
-    border-bottom: none;
-}
-
-.rank-name {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #0f0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.rank-roman {
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 1rem;
-    color: #888;
-    font-style: italic;
-}
-
-.rank-translation {
-    font-family: 'ZenDotsKir', sans-serif;
-    font-size: 1rem;
-    color: #fff;
-}
-
-/* Адаптивность модального окна */
-@media (max-width: 576px) {
-    .modal-content {
-        padding: 25px;
-        max-height: 90vh;
-    }
-
-    .modal-title {
-        font-size: 1.4rem;
-        padding-right: 30px;
-    }
-
-    .modal-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .rank-name {
-        font-size: 1rem;
-    }
-
-    .rank-roman,
-    .rank-translation {
-        font-size: 0.9rem;
-    }
-
-    .how-it-works-btn {
-        font-size: 1rem;
-        padding: 12px 20px;
-    }
-}
-
-/* Модальное окно достижений рэйсера */
 .achievements-modal-content {
     max-width: 700px;
     max-height: 85vh;
@@ -1294,11 +749,6 @@ body {
 .achievements-photo img.zoomed {
     object-position: center 70%;
     transform: scale(1.2);
-}
-
-.racer-photo img.zoomed {
-    object-position: center 70%;
-    transform: scale(1.1);
 }
 
 .achievements-info {
@@ -1413,42 +863,712 @@ body {
     font-style: italic;
 }
 
-/* Адаптивность модального окна достижений */
+/* ============================================================
+   КАТАЛОГ
+   ============================================================ */
+
+.catalog-page {
+    padding-top: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.catalog-info {
+    text-align: center;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    padding: 15px 20px;
+    background-color: rgba(0, 20, 0, 0.4);
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 10px;
+    color: #ccc;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.catalog-empty {
+    text-align: center;
+    padding: 80px 20px;
+    color: #666;
+}
+
+.catalog-empty i {
+    font-size: 5rem;
+    color: #333;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.catalog-empty p {
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.catalog-empty-sub {
+    font-size: 0.95rem !important;
+    color: #555 !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+    max-width: 400px;
+    margin: 0 auto !important;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.catalog-card {
+    background-color: rgba(20, 20, 20, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.catalog-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 0, 0.5);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 255, 0, 0.2);
+}
+
+.catalog-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: #111;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.catalog-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.catalog-card:hover .catalog-img img {
+    transform: scale(1.08);
+}
+
+.catalog-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #0f0;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 9px;
+    border: 1px solid #0f0;
+    border-radius: 4px;
+    text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+    z-index: 2;
+}
+
+.catalog-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.catalog-title {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.3;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    min-height: 2.6em;
+}
+
+.catalog-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.catalog-btn {
+    flex: 1;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 9px 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.catalog-btn-watch {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.catalog-btn-watch:hover {
+    color: #0f0;
+    border-color: #0f0;
+    box-shadow: 0 0 12px rgba(0, 255, 0, 0.5);
+}
+
+.catalog-btn-apply {
+    background-color: rgba(0, 30, 0, 0.6);
+    color: #0f0;
+    border-color: #0f0;
+}
+
+.catalog-btn-apply:hover {
+    background-color: rgba(0, 60, 0, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.6);
+    transform: translateY(-2px);
+}
+
+.catalog-btn:active {
+    transform: scale(0.97);
+}
+
+/* ============================================================
+   ФОРМА ЗАЯВКИ
+   ============================================================ */
+
+.apply-page {
+    padding-top: 20px;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.apply-info {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.06), rgba(0, 20, 0, 0.5));
+    border: 1px solid rgba(0, 255, 0, 0.25);
+    border-radius: 12px;
+    color: #bbb;
+    position: relative;
+    overflow: hidden;
+}
+
+.apply-info::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.08), transparent);
+    animation: applyInfoShine 6s infinite;
+}
+
+@keyframes applyInfoShine {
+    0%        { left: -100%; }
+    50%, 100% { left: 100%; }
+}
+
+.apply-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 35px 30px;
+    background: linear-gradient(145deg, rgba(5, 10, 5, 0.9), rgba(0, 0, 0, 0.95));
+    border: 1px solid rgba(0, 255, 0, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: all 0.4s ease;
+}
+
+.apply-form::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 3px;
+    background: linear-gradient(90deg, transparent, #0f0, transparent);
+    opacity: 0.5;
+    border-radius: 16px 16px 0 0;
+}
+
+.apply-form.form-sending {
+    pointer-events: none;
+    opacity: 0.7;
+    filter: blur(0.5px);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.form-group label {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #0f0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 4px;
+    text-shadow: 0 0 8px rgba(0, 255, 0, 0.3);
+}
+
+.form-group label .required {
+    color: #ff6b6b;
+    margin-left: 4px;
+    animation: reqPulse 2s infinite;
+}
+
+@keyframes reqPulse {
+    0%, 100% { opacity: 1; }
+    50%      { opacity: 0.5; }
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(0, 255, 0, 0.15);
+    border-radius: 10px;
+    padding: 14px 18px;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-group select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%230f0' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 14px;
+    padding-right: 45px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-group select option {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 10px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 110px;
+    line-height: 1.5;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #555;
+    font-style: italic;
+}
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: rgba(0, 255, 0, 0.3);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #0f0;
+    background: rgba(0, 20, 0, 0.6);
+    box-shadow: 0 0 0 3px rgba(0, 255, 0, 0.1), 0 0 20px rgba(0, 255, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.form-group input.shake,
+.form-group select.shake,
+.form-group textarea.shake {
+    animation: fieldShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    border-color: #ff6b6b !important;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5) !important;
+}
+
+@keyframes fieldShake {
+    10%, 90% { transform: translateX(-2px); }
+    20%, 80% { transform: translateX(4px); }
+    30%, 50%, 70% { transform: translateX(-6px); }
+    40%, 60% { transform: translateX(6px); }
+}
+
+/* ============================================================
+   КНОПКА ОТПРАВКИ
+   ============================================================ */
+
+.submit-btn {
+    position: relative;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #000, #0a1a0a);
+    color: #fff;
+    border: 2px solid #0f0;
+    border-radius: 10px;
+    padding: 16px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 8px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.submit-btn:hover:not(:disabled)::before {
+    left: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+    color: #0f0;
+    box-shadow: 0 0 30px rgba(0, 255, 0, 0.5);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #000, #0f2a0f);
+}
+
+.submit-btn:active:not(:disabled) {
+    transform: translateY(-1px) scale(0.99);
+}
+
+.submit-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.submit-btn.loading {
+    border-color: #0f0;
+    color: #0f0;
+    cursor: wait;
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.05), rgba(0, 255, 0, 0.15));
+}
+
+.submit-btn.success {
+    border-color: #0f0;
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.25), rgba(0, 255, 0, 0.4));
+    color: #0f0;
+    box-shadow: 0 0 50px rgba(0, 255, 0, 0.6), inset 0 0 20px rgba(0, 255, 0, 0.2);
+    animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.btn-loader {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.loader-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #0f0;
+    box-shadow: 0 0 10px #0f0;
+    animation: loaderBounce 1.4s infinite ease-in-out both;
+}
+
+.loader-dot:nth-child(1) { animation-delay: -0.32s; }
+.loader-dot:nth-child(2) { animation-delay: -0.16s; }
+.loader-dot:nth-child(3) { animation-delay: 0s; }
+
+@keyframes loaderBounce {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+    40%           { transform: scale(1); opacity: 1; }
+}
+
+.btn-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #0f0;
+    color: #000;
+    animation: checkPop 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 20px #0f0;
+}
+
+.btn-check i {
+    font-size: 13px;
+    font-weight: 900;
+}
+
+@keyframes checkPop {
+    0%   { transform: scale(0) rotate(-180deg); opacity: 0; }
+    60%  { transform: scale(1.2) rotate(10deg); opacity: 1; }
+    100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+/* ============================================================
+   СТАТУС ОТПРАВКИ
+   ============================================================ */
+
+.form-status {
+    text-align: center;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 0.95rem;
+    border-radius: 10px;
+    transition: all 0.35s ease;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    padding: 0 15px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.form-status.show {
+    max-height: 200px;
+    opacity: 1;
+    padding: 16px 20px;
+    margin-top: 8px;
+}
+
+.form-status .status-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.form-status.success {
+    color: #0f0;
+    background: linear-gradient(135deg, rgba(0, 255, 0, 0.12), rgba(0, 255, 0, 0.05));
+    border: 1px solid rgba(0, 255, 0, 0.5);
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.25);
+    animation: statusSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.form-status.error {
+    color: #ff6b6b;
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.12), rgba(255, 107, 107, 0.05));
+    border: 1px solid rgba(255, 107, 107, 0.5);
+    box-shadow: 0 0 25px rgba(255, 107, 107, 0.25);
+    animation: statusShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+}
+
+@keyframes statusSlideIn {
+    from { transform: translateY(-10px) scale(0.95); opacity: 0; }
+    to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes statusShake {
+    10%, 90% { transform: translateX(-2px); }
+    20%, 80% { transform: translateX(4px); }
+    30%, 50%, 70% { transform: translateX(-6px); }
+    40%, 60% { transform: translateX(6px); }
+}
+
+/* ============================================================
+   АДАПТАЦИЯ
+   ============================================================ */
+
+@media (max-width: 992px) {
+    .racers-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header { padding: 20px 0; }
+    .logo-img { width: 120px; height: 120px; }
+}
+
 @media (max-width: 576px) {
-    .achievements-modal-content {
-        padding: 20px;
-        max-height: 90vh;
-        max-width: 95%;
-    }
+    .racers-container { grid-template-columns: 1fr; }
+    .id-card { height: 250px; }
+    .buttons-container { flex-direction: column; align-items: center; }
+    .menu-btn { width: 100%; max-width: 300px; }
 
-    .achievements-header {
+    .catalog-grid { grid-template-columns: 1fr; gap: 18px; }
+    .catalog-img { aspect-ratio: 16 / 9; }
+    .catalog-title { font-size: 0.95rem; }
+    .catalog-btn { font-size: 0.75rem; padding: 9px 6px; }
+
+    .apply-page { padding-top: 10px; }
+    .apply-info { font-size: 0.85rem; padding: 14px 16px; margin-bottom: 25px; }
+    .apply-form { padding: 25px 18px; gap: 18px; border-radius: 14px; }
+    .form-group label { font-size: 0.75rem; letter-spacing: 1.5px; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea { font-size: 0.95rem; padding: 12px 15px; }
+    .form-group textarea { min-height: 90px; }
+    .submit-btn { font-size: 0.9rem; padding: 14px 24px; letter-spacing: 1.5px; }
+    .form-status { font-size: 0.85rem; }
+    .form-status.show { padding: 12px 15px; }
+
+    .achievements-modal-content { padding: 20px; max-height: 90vh; max-width: 95%; }
+    .achievements-header { flex-direction: row; align-items: flex-start; text-align: left; gap: 15px; }
+    .achievements-name { font-size: 1.4rem; }
+    .achievements-photo { width: 140px; height: 180px; font-size: 2rem; }
+    .achievement-list { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 10px; }
+    .header { padding: 15px 0; }
+    .logo-img { width: 100px; height: 100px; }
+    .logo-circle { border-width: 3px; }
+    .logo-circle::before { border-width: 2px; box-shadow: 0 0 15px #0f0; }
+
+    .welcome-text { font-size: 1rem; padding: 12px; line-height: 1.4; margin-bottom: 25px; }
+    .menu-btn { min-width: 180px; font-size: 0.9rem; padding: 12px 20px; width: 100%; max-width: 260px; }
+    .buttons-container { flex-direction: column; gap: 12px; margin-top: 25px; align-items: center; }
+
+    .social-buttons-container {
         flex-direction: row;
-        align-items: flex-start;
-        text-align: left;
         gap: 15px;
+        justify-content: center;
+        flex-wrap: nowrap;
+        padding: 10px 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .achievements-info {
-        text-align: left;
-        flex: 1;
+    .social-btn { width: 55px; height: 55px; font-size: 0.7rem; gap: 2px; flex-shrink: 0; }
+    .social-btn i { font-size: 1.35rem !important; }
+    .social-btn:active { transform: scale(0.95) !important; }
+
+    .missions-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; }
+    .mission-img { height: 100px; }
+    .mission-link { padding: 10px; font-size: 0.8rem; }
+
+    .page-title { font-size: 1.4rem; margin-bottom: 15px; }
+    .system-info { font-size: 0.9rem; padding: 12px; margin-bottom: 20px; }
+
+    .back-btn { padding: 8px 15px; font-size: 0.85rem; }
+
+    /* Карточки рэйсеров — фото НЕ обрезаются снизу */
+    .id-card {
+        height: auto;
+        min-height: 180px;
+        padding: 12px;
+        transform: none !important;
     }
 
-    .achievements-name {
-        font-size: 1.4rem;
+    .id-card:hover {
+        transform: translateY(-5px) !important;
     }
 
-    .achievements-photo {
-        width: 140px;
-        height: 180px;
-        font-size: 2rem;
+    .card-logo {
+        width: 120px;
+        height: 24px;
+        font-size: 0.6rem;
+        top: 20px;
+        left: 8px;
+    }
+
+    .racer-photo-container {
+        width: 120px;
+        height: 160px;
+        top: 55px;
+        left: 8px;
+        font-size: 1.5rem;
+    }
+
+    .racer-info {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: calc(100% - 140px);
+        flex-direction: column;
+        gap: 2px;
+        margin-top: 8px;
+        margin-left: 140px;
+    }
+
+    .info-item {
+        font-size: 0.9rem;
+        padding-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .info-label {
+        font-size: 0.85rem;
+        margin-right: 10px;
         flex-shrink: 0;
     }
 
-    .achievement-list {
-        grid-template-columns: 1fr;
+    .info-value {
+        font-size: 0.9rem;
+        text-align: right;
     }
 
-    .section-title {
-        font-size: 1.1rem;
+    .racer-signature {
+        font-size: 2rem;
+        bottom: 8px;
+        right: 12px;
     }
+
+    .neon-stripe {
+        bottom: 6px;
+        width: 50%;
+    }
+
+    .main-content { padding: 15px; min-height: auto; }
+    .about-page, .ranking-page { padding-top: 15px; }
 }
