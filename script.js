@@ -69,6 +69,7 @@ function updateRacerScores() {
 
 // Данные для сайта
 const missionData = [
+    { id: 33, name: "Миссия 33", link: "https://youtu.be/xIU7Jh-QWdg", image: "lockpao" },
     { id: 32, name: "Миссия 32", link: "https://youtu.be/x7qO3zcMh2Y", image: "lobby" },
     { id: 31, name: "Миссия 31", link: "https://youtu.be/WVO--liuNb0", image: "acai" },
     { id: 30, name: "Миссия 30", link: "https://youtu.be/lThYVe_TIag", image: "wet" },
@@ -151,7 +152,7 @@ const racersData = [
                 "Monsta X - Do What I Want", "Xikers - Superpower", "Itzy - Tunnel Vision", "Stray Kids - Do It", "Kid Phenomenon - Party Over There",
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
                       "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Meovv - Hit 'Em",
-                      "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "J.Y.Park - Wet", "Cortis - Acai", "Tobii - Hotel Lobby"],
+                      "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "J.Y.Park - Wet", "Cortis - Acai", "Tobii - Hotel Lobby", "Dicered - Lock Pao"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
