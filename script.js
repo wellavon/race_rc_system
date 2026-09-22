@@ -137,7 +137,7 @@ const racersData = [
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
             ],
-            bonus: 500
+            bonus: 600
         }
     },
     {
