@@ -1,12 +1,3 @@
 {
-  "missions": [
-    {
-      "id": 999,
-      "name": "Test - Track",
-      "artist": "Test",
-      "title": "Track",
-      "link": "https://youtu.be/xxxx",
-      "image": "test"
-    }
-  ]
+  "missions": []
 }
