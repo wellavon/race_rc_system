@@ -684,16 +684,6 @@ function generateCatalogPage() {
 // === СТРАНИЦА ЗАЯВКИ ===
 
 function generateApplyPage(preselectedProject = '') {
-    const allProjects = [...catalogData].sort((a, b) => b.id - a.id);
-
-    const projectsOptions = allProjects.map(p => {
-        const displayArtist = p.artist || '';
-        const displayTitle = p.title || p.name || `Миссия ${p.id}`;
-        const fullName = displayArtist ? `${displayArtist} - ${displayTitle}` : displayTitle;
-        const selected = (String(fullName) === String(preselectedProject)) ? ' selected' : '';
-        return `<option value="${escapeHtml(fullName)}"${selected}>${escapeHtml(fullName)}</option>`;
-    }).join('');
-
     return `
         <div class="apply-page">
             <div class="back-btn-container">
@@ -722,12 +712,14 @@ function generateApplyPage(preselectedProject = '') {
                 </div>
 
                 <div class="form-group">
-                    <label for="applyProject">На какой проект откликаешься? <span class="required">*</span></label>
-                    <select id="applyProject" name="project" required>
-                        <option value="">— Выбери проект —</option>
-                        ${projectsOptions}
-                        <option value="Другое">Другое (напишу в комментарии)</option>
-                    </select>
+                    <label for="applyProjectDisplay">Проект</label>
+                    <input type="text" id="applyProjectDisplay"
+                           value="${escapeHtml(preselectedProject)}"
+                           placeholder="Проект не выбран"
+                           readonly
+                           class="project-readonly">
+                    <input type="hidden" id="applyProject" name="project"
+                           value="${escapeHtml(preselectedProject)}">
                 </div>
 
                 <div class="form-group">
@@ -791,13 +783,18 @@ async function submitApplication(event) {
     const project = form.project.value;
     const videos = form.videos.value.trim();
 
-    if (!name || !telegram || !project || !videos) {
+    if (!project) {
+        statusEl.textContent = 'Проект не выбран. Вернись в каталог и нажми «Откликнуться».';
+        statusEl.className = 'form-status error show';
+        return;
+    }
+
+    if (!name || !telegram || !videos) {
         statusEl.textContent = 'Заполни обязательные поля.';
         statusEl.className = 'form-status error show';
 
         if (!name) { form.name.classList.add('shake'); setTimeout(() => form.name.classList.remove('shake'), 600); }
         if (!telegram) { form.telegram.classList.add('shake'); setTimeout(() => form.telegram.classList.remove('shake'), 600); }
-        if (!project) { form.project.classList.add('shake'); setTimeout(() => form.project.classList.remove('shake'), 600); }
         if (!videos) { form.videos.classList.add('shake'); setTimeout(() => form.videos.classList.remove('shake'), 600); }
         return;
     }
