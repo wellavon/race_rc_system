@@ -631,7 +631,7 @@ function generateCatalogPage() {
         `;
     }
 
-    const sorted = [...catalogData].sort((a, b) => b.id - a.id);
+    const sorted = [...catalogData];
 
     const cardsHTML = sorted.map(mission => {
         const displayArtist = mission.artist || '';
