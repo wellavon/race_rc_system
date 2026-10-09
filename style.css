@@ -1427,6 +1427,14 @@ body {
     animation: statusShake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97);
 }
 
+.project-readonly {
+    background: rgba(0, 255, 0, 0.05);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    color: #0f0;
+    cursor: not-allowed;
+    font-family: 'ZenDotsKir', sans-serif;
+}
+
 @keyframes statusSlideIn {
     from { transform: translateY(-10px) scale(0.95); opacity: 0; }
     to   { transform: translateY(0) scale(1); opacity: 1; }
