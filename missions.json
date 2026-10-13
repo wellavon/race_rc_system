@@ -1,6 +1,14 @@
 {
   "missions": [
     {
+      "id": 99,
+      "name": "LEGO - Rich",
+      "artist": "LEGO",
+      "title": "Rich",
+      "link": "https://youtu.be/W5jOM6J9m10?is=V-8ou8YgylGAeHm0",
+      "image": "rich"
+    },
+    {
       "id": 100,
       "name": "BUS - Liar",
       "artist": "BUS",
