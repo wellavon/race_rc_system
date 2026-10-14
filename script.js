@@ -263,27 +263,6 @@ const racersData = [
         }
     },
     {
-        id: "2401.2",
-        name: "Vanyaslay",
-        class: "",
-        score: 0,
-        photo: "vanyaslay",
-        achievements: {
-            projects: ["All(h)ours - Gotcha", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift", "Le Sserafim - Boompala", "Xikers - OKay", "&Team - Rush"],
-            festivals: ["lll кубок Москвы (30.08.25)", "ANM Dance Festival (14.09.25)", "Coolapalooza (22.03.26)",
-                "Venom Fest (19.04.26)", "1Y (3.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)", "ANM Dance Festival (28.06.26)",
-                "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)"],
-            wins: [
-                { place: 1, festival: "1Y (3.05.26)" },
-                { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
-                { place: 1, festival: "CHOOM BATTLE (18.07.26)" },
-                { place: 2, festival: "DEEPFEST SUMMER 2026 (21.06.26)" },
-                { place: 3, festival: "ANM Dance Festival (14.09.25)" },
-                { place: 3, festival: "Coolapalooza (22.03.26)" }
-            ]
-        }
-    },
-    {
         id: "1012.3",
         name: "Tokbok",
         class: "",
@@ -432,9 +411,6 @@ function generateAboutPage() {
 // === РЭЙСЕРЫ ===
 
 function getDisplayName(racerId) {
-    if (racerId === "2401.2") {
-        return "Vanya<br>slay";
-    }
     const racer = racersData.find(r => r.id === racerId);
     if (!racer) return "";
     return racer.name;
@@ -453,7 +429,7 @@ function generateRankingPage() {
             <div class="card-logo">racer card</div>
             <div class="racer-photo-container">
                 <div class="racer-photo">
-                    <img src="${racer.photo}.png" alt="${racer.name}" ${['corey', 'minka', 'tveva', 'vanyaslay', 'tokbok'].includes(racer.photo) ? 'class="zoomed"' : ''}>
+                    <img src="${racer.photo}.png" alt="${racer.name}" ${['corey', 'tokbok'].includes(racer.photo) ? 'class="zoomed"' : ''}>
                 </div>
             </div>
             <div class="racer-info">
@@ -547,7 +523,7 @@ function openRacerAchievements(racerId) {
 
     const contentHTML = `
         <div class="achievements-header">
-            <div class="achievements-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'minka', 'tveva', 'vanyaslay', 'tokbok'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
+            <div class="achievements-photo"><img src="${racer.photo}.png" alt="${racer.name}"${['corey', 'tokbok'].includes(racer.photo) ? ' class="zoomed"' : ''}></div>
             <div class="achievements-info">
                 <h2 class="achievements-name">${getDisplayName(racer.id)}</h2>
                 <p class="achievements-id">ID: ${racer.id}</p>
@@ -673,6 +649,7 @@ function generateCatalogPage() {
             <div class="catalog-info">
                 Выбери проект и нажми «Откликнуться» — форма заявки откроется
                 с уже выбранным проектом.
+                
             </div>
             <div class="catalog-grid">
                 ${cardsHTML}
@@ -696,6 +673,12 @@ function generateApplyPage(preselectedProject = '') {
             <div class="apply-info">
                 Заполни форму — заявка уйдёт напрямую менторам.
                 Когда придет время реализации проекта - мы свяжемся с тобой в Telegram.
+                <br><br>
+                <strong>Важно:</strong> ссылки на видео прикрепляй
+                только при формировании своей первой заявки.
+                Если с момента прошлой заявки прошло больше 6 месяцев —
+                портфолио нужно прикрепить снова. При повторной заявке
+                (когда прошло меньше 6 месяцев) - не нужно.
             </div>
 
             <form id="applyForm" class="apply-form" onsubmit="submitApplication(event)">
@@ -723,7 +706,7 @@ function generateApplyPage(preselectedProject = '') {
                 </div>
 
                 <div class="form-group">
-                    <label for="applyVideos">Ссылки на видео <span class="required">*</span></label>
+                    <label for="applyVideos">Ссылки на видео </label>
                     <textarea id="applyVideos" name="videos" rows="4"
                               placeholder="Вставь ссылки на свои видео с проектами (каждая с новой строки)&#10;Например:&#10;https://youtu.be/xxxx&#10;https://youtu.be/yyyy"
                               required maxlength="1000"></textarea>
