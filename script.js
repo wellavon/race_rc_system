@@ -772,17 +772,17 @@ async function submitApplication(event) {
         return;
     }
 
-    if (!name || !telegram || !videos) {
+    if (!name || !telegram) {
         statusEl.textContent = 'Заполни обязательные поля.';
         statusEl.className = 'form-status error show';
 
         if (!name) { form.name.classList.add('shake'); setTimeout(() => form.name.classList.remove('shake'), 600); }
         if (!telegram) { form.telegram.classList.add('shake'); setTimeout(() => form.telegram.classList.remove('shake'), 600); }
-        if (!videos) { form.videos.classList.add('shake'); setTimeout(() => form.videos.classList.remove('shake'), 600); }
+        
         return;
     }
 
-    if (name.length > 50 || telegram.length > 50 || videos.length > 1000) {
+    if (name.length > 50 || telegram.length > 50 || (videos && videos.length > 1000)) {
         statusEl.textContent = 'Слишком длинный текст в одном из полей.';
         statusEl.className = 'form-status error show';
         return;
