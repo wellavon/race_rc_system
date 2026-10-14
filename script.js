@@ -709,7 +709,7 @@ function generateApplyPage(preselectedProject = '') {
                     <label for="applyVideos">Ссылки на видео </label>
                     <textarea id="applyVideos" name="videos" rows="4"
                               placeholder="Вставь ссылки на свои видео с проектами (каждая с новой строки)&#10;Например:&#10;https://youtu.be/xxxx&#10;https://youtu.be/yyyy"
-                              required maxlength="1000"></textarea>
+                              maxlength="1000"></textarea>
                 </div>
 
                 <div class="form-status" id="applyStatus"></div>
