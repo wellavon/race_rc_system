@@ -158,7 +158,7 @@ const racersData = [
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
             ],
-            bonus: 600
+            bonus: 800
         }
     },
     {
@@ -174,7 +174,7 @@ const racersData = [
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
                 "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Meovv - Hit 'Em",
                 "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "J.Y.Park - Wet", "Cortis - Acai", "Tobii - Hotel Lobby", "Dicered - Lock Pao",
-                "Nomads - Why", "JO1 - Whatcha Doin"],
+                "Nomads - Why", "JO1 - Whatcha Doin", "Perses - Kitty Swag"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -187,12 +187,14 @@ const racersData = [
                 { place: 1, festival: "1Y (3.05.26)" },
                 { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
                 { place: 1, festival: "CHOOM BATTLE (18.07.26)" },
+                { place: 1, festival: "CD FEST (18.10.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 2, festival: "DEEPFEST SUMMER 2026 (21.06.26)" },
                 { place: 2, festival: "VK ADF (18.07.26)" },
                 { place: 3, festival: "ANM Dance Festival (14.09.25)" },
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
-                { place: 3, festival: "Coolapalooza (22.03.26)" }
+                { place: 3, festival: "Coolapalooza (22.03.26)" },
+                { place: 3, festival: "DYNAMOVE (17.10.26)" }
             ],
             bonus: 150
         }
