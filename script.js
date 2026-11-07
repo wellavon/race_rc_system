@@ -147,13 +147,14 @@ const racersData = [
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
                 "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)",
                 "ANM Dance Festival (28.06.26)", "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "1Y (30.08.26) - Solo/Duo with team",
-                "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)"],
+                "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)", "Stage A (7.11.26)"],
             wins: [
                 { place: 1, festival: "Venom Fest (27.04.25)" },
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
                 { place: 1, festival: "1Y (3.05.26)" },
                 { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
                 { place: 1, festival: "CHOOM BATTLE (18.07.26)" },
+                { place: 1, festival: "Stage A (7.11.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 2, festival: "DEEPFEST SUMMER 2026 (21.06.26)" },
                 { place: 2, festival: "VK ADF (18.07.26)" },
@@ -161,7 +162,7 @@ const racersData = [
                 { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" },
                 { place: 3, festival: "Coolapalooza (22.03.26)" }
             ],
-            bonus: 800
+            bonus: 900
         }
     },
     {
@@ -183,7 +184,7 @@ const racersData = [
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
                 "ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)",
                 "ANM Dance Festival (28.06.26)", "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "1Y (30.08.26) - Solo/Duo with team",
-                "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)"],
+                "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)", "DYNAMOVE (17.10.26)", "CD FEST (18.10.26)", "Stage A (7.11.26)"],
             wins: [
                 { place: 1, festival: "Venom Fest (27.04.25)" },
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
@@ -191,6 +192,7 @@ const racersData = [
                 { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
                 { place: 1, festival: "CHOOM BATTLE (18.07.26)" },
                 { place: 1, festival: "CD FEST (18.10.26)" },
+                { place: 1, festival: "Stage A (7.11.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 2, festival: "DEEPFEST SUMMER 2026 (21.06.26)" },
                 { place: 2, festival: "VK ADF (18.07.26)" },
@@ -216,12 +218,13 @@ const racersData = [
             ],
             festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)",
                 "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)", "ANM Dance Festival (28.06.26)",
-                "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "Fandom Fest (11.10.26)"],
+                "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "Fandom Fest (11.10.26)", "Stage A (7.11.26)"],
             wins: [
                 { place: 1, festival: "1Y (17.08.25) - Boys" },
                 { place: 1, festival: "1Y (3.05.26)" },
                 { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
                 { place: 1, festival: "CHOOM BATTLE (18.07.26)" },
+                { place: 1, festival: "Stage A (7.11.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 2, festival: "DEEPFEST SUMMER 2026 (21.06.26)" },
                 { place: 2, festival: "VK ADF (18.07.26)" }
@@ -257,10 +260,12 @@ const racersData = [
                 "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD", "&Team - Rush",
                 "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "Cortis - Acai", "Tobii - Hotel Lobby", "JO1 - Whatcha Doin", "&Team - Good Boy"],
             festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)", "ANM Dance Festival (28.06.26)",
-                "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)"],
+                "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)", 
+                "Stage A (7.11.26)"],
             wins: [
                 { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
                 { place: 1, festival: "CHOOM BATTLE (18.07.26)" },
+                { place: 1, festival: "Stage A (7.11.26)" },
                 { place: 2, festival: "ANM Dance Festival (8.02.26)" },
                 { place: 2, festival: "DEEPFEST SUMMER 2026 (21.06.26)" },
                 { place: 2, festival: "VK ADF (18.07.26)" },
@@ -276,10 +281,11 @@ const racersData = [
         photo: "tokbok",
         achievements: {
             projects: ["One Or Eight - Tokyo Drift", "&Team - Rush", "&Team - Good Boy"],
-            festivals: ["1Y (3.05.26)", "K-POP COVER BATTLE (11.07.26)"],
+            festivals: ["1Y (3.05.26)", "K-POP COVER BATTLE (11.07.26)", "Stage A (7.11.26)"],
             wins: [
                 { place: 1, festival: "1Y (3.05.26)" },
-                { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" }
+                { place: 1, festival: "K-POP COVER BATTLE (11.07.26)" },
+                { place: 1, festival: "Stage A (7.11.26)" }
             ]
         }
     }
