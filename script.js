@@ -49,6 +49,7 @@ function updateRacerScores() {
 // ============================================================
 
 const missionData = [
+    { id: 38, name: "Миссия 38", link: "https://youtu.be/RezPl8s1jJw?si=x467CiSpPQLVqOaz", image: "drip" },
     { id: 37, name: "Миссия 37", link: "https://youtu.be/M0UT0z5FWCY", image: "kitty_swag" },
     { id: 36, name: "Миссия 36", link: "https://youtu.be/-tsJYT3G8uI", image: "good_boy" },
     { id: 35, name: "Миссия 35", link: "https://youtu.be/6tYbY87Ka7U?si=xfTd26Ze9FZziXc-", image: "wyd" },
@@ -141,7 +142,7 @@ const racersData = [
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
                 "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD", "&Team - Rush",
                 "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "J.Y.Park - Wet", "Cortis - Acai", "Tobii - Hotel Lobby", "Nomads - Why", "JO1 - Whatcha Doin",
-                      "&Team - Good Boy"],
+                      "&Team - Good Boy", "Ateez - Drip"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -178,7 +179,7 @@ const racersData = [
                 "Lngshot - Saucin'", "Ateez - Adrenaline", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "One Or Eight - Tokyo Drift",
                 "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Meovv - Hit 'Em",
                 "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "J.Y.Park - Wet", "Cortis - Acai", "Tobii - Hotel Lobby", "Dicered - Lock Pao",
-                "Nomads - Why", "JO1 - Whatcha Doin", "Perses - Kitty Swag", "&Team - Good Boy"],
+                "Nomads - Why", "JO1 - Whatcha Doin", "Perses - Kitty Swag", "&Team - Good Boy", "Ateez - Drip"],
             festivals: ["Venom Fest (27.04.25)", "CoverLand (27.04.25)", "ANM Dance Festival (29.06.25)",
                 "DEEPFEST SUMMER 2025 (29.06.25)", "1Y (17.08.25) - Boys", "1Y (17.08.25) - Solo/Duo With Team", "lll кубок Москвы (30.08.25)",
                 "ANM Dance Festival (14.09.25)", "CoverLand (14.12.25)", "DEEPFEST WINTER 2025 (21.12.25)", "K-DOM Champ (11.01.26)",
@@ -214,7 +215,7 @@ const racersData = [
             projects: ["Ateez - In Your Fantasy", "Ateez - Shaboom", "Xikers - Superpower", "Lngshot - Saucin'", "Nexz - One Bite",
                 "Ateez - Adrenaline", "One Or Eight - Tokyo Drift", "Katseye - Pinky Up", "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D",
                 "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD", "&Team - Rush", "Ateez - BAD (Wedding Ver)", "Cortis - Acai", "JO1 - Whatcha Doin",
-                       "&Team - Good Boy"
+                       "&Team - Good Boy", "Ateez - Drip"
             ],
             festivals: ["1Y (17.08.25) - Boys", "CoverLand (14.12.25)", "K-DOM Champ (11.01.26)", "ANM Dance Festival (8.02.26)",
                 "Venom Fest (19.04.26)", "1Y (3.05.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)", "ANM Dance Festival (28.06.26)",
@@ -258,7 +259,7 @@ const racersData = [
         achievements: {
             projects: ["Stray Kids - Ceremony", "Stray Kids - Do It", "Nexz - One Bite", "All(h)ours - Ready 2 Rumble", "Katseye - Pinky Up",
                 "Cortis - RedRed", "The Jet Boy Bangerz - Gear5 + B.A.D", "Le Sserafim - Boompala", "Xikers - OKay", "Ateez - BAD", "&Team - Rush",
-                "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "Cortis - Acai", "Tobii - Hotel Lobby", "JO1 - Whatcha Doin", "&Team - Good Boy"],
+                "Ateez - BAD (Wedding Ver)", "Girlset - Chat", "Cortis - Acai", "Tobii - Hotel Lobby", "JO1 - Whatcha Doin", "&Team - Good Boy", "Ateez - Drip"],
             festivals: ["ANM Dance Festival (8.02.26)", "Coolapalooza (22.03.26)", "ADF (16.05.26)", "DEEPFEST SUMMER 2026 (21.06.26)", "ANM Dance Festival (28.06.26)",
                 "K-POP COVER BATTLE (11.07.26)", "CHOOM BATTLE (18.07.26)", "VK ADF (18.07.26)", "1Y (30.08.26) - Who's next", "Fandom Fest (11.10.26)", 
                 "Stage A (7.11.26)"],
