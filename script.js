@@ -44,6 +44,23 @@ function updateRacerScores() {
     });
 }
 
+// Бэк-офису считаем баллы по той же логике: 100 за проект
+function calculateBackOfficeScore(person) {
+    let score = 0;
+    const projectsCount = person.achievements && person.achievements.projects
+        ? person.achievements.projects.length
+        : 0;
+    score += projectsCount * 100;
+    return score;
+}
+
+function updateBackOfficeScores() {
+    backOfficeData.forEach(person => {
+        person.score = calculateBackOfficeScore(person);
+        person.class = getRacerClass(person.score);
+    });
+}
+
 // ============================================================
 // ПОРТФОЛИО: миссии, которые заводишь вручную
 // ============================================================
@@ -289,10 +306,64 @@ const racersData = [
                 { place: 1, festival: "Stage A (7.11.26)" }
             ]
         }
+    },
+    {
+        id: "2404.8",
+        name: "Tesha",
+        class: "", 
+        score: 0, 
+        photo: "tesha",
+        achievements: {
+            projects: ["Kid Phenomenon - Party Over There", "The Jet Boy Bangerz - Gear5 + B.A.D", "JO1 - Whatcha Doin", "&Team - Good Boy", "Ateez - Drip"],
+            festivals: ["DEEPFEST WINTER 2025 (21.12.25)", "ADF (16.05.26)", "VK ADF (18.07.26)", "Fandom Fest (11.10.26)", "Stage A (7.11.26)"],
+            wins: [
+                { place: 1, festival: "Stage A (7.11.26)" },
+                { place: 2, festival: "VK ADF (18.07.26)" },
+                { place: 3, festival: "DEEPFEST WINTER 2025 (21.12.25)" }
+            ]
+        }
+    },
+    {
+        id: "0910.1",
+        name: "Vishnya",
+        class: "", 
+        score: 0, 
+        photo: "vishnya",
+        achievements: {
+            projects: ["The Jet Boy Bangerz - Gear5 + B.A.D", "Ateez - BAD", "Ateez - BAD (Wedding Ver)", "JO1 - Whatcha Doin", "Ateez - Drip"],
+            festivals: ["ADF (16.05.26)", "VK ADF (18.07.26)", "Fandom Fest (11.10.26)"],
+            wins: [
+                { place: 2, festival: "VK ADF (18.07.26)" }
+            ]
+        }
+    }
+];
+
+// ============================================================
+// БЭК ОФИС: люди, которые помогают рэйсерам
+// ============================================================
+
+const backOfficeData = [
+    {
+        id: "0106.7",
+        name: "Hleb",
+        photo: "hleb",
+        role: "Оператор",
+        telegram: "https://t.me/hleb1b", 
+        help: "Любимый <del>пирожочек</del> оператор рэйсеров",
+        score: 0,
+        class: "",
+        achievements: {
+            projects: ["Ateez - BAD (Wedding Ver)", "Girlset - Chat", "J.Y.Park - Wet",
+                "Nomads - Why", "JO1 - Whatcha Doin", "Perses - Kitty Swag", "&Team - Good Boy", 
+                "Ateez - Drip"
+            ]
+        }
     }
 ];
 
 updateRacerScores();
+updateBackOfficeScores();
 
 // === РОУТИНГ ===
 
@@ -487,6 +558,11 @@ function generateRankingPage() {
             <div class="racers-container">
                 ${otherHTML}
             </div>
+                        <h2 class="page-title" style="margin-top:50px;">бэк офис</h2>
+            <div class="racers-container backoffice-container">
+                ${generateBackOfficeCards()}
+            </div>
+
             <div class="modal-overlay" id="racerAchievementsModal" onclick="closeRacerAchievements(event)">
                 <div class="modal-content achievements-modal-content">
                     <button class="modal-close" onclick="closeRacerAchievements()">
@@ -495,8 +571,125 @@ function generateRankingPage() {
                     <div id="racerAchievementsContent"></div>
                 </div>
             </div>
-        </div>
+
+            <div class="modal-overlay" id="backOfficeProjectsModal" onclick="closeBackOfficeProjects(event)">
+                <div class="modal-content achievements-modal-content">
+                    <button class="modal-close" onclick="closeBackOfficeProjects()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <div id="backOfficeProjectsContent"></div>
+                </div>
+            </div>
     `;
+}
+
+// === БЭК ОФИС ===
+
+function generateBackOfficeCards() {
+    if (!backOfficeData || backOfficeData.length === 0) {
+        return `<div class="catalog-empty" style="grid-column:1/-1">
+                    <i class="fas fa-user-cog"></i>
+                    <p>Бэк офис пока пуст</p>
+                </div>`;
+    }
+
+    return backOfficeData.map(person => `
+        <div class="id-card" onclick="openBackOfficeProjects('${person.id}')">
+            <div class="card-logo">racer card</div>
+            <div class="racer-photo-container">
+                <div class="racer-photo">
+                    <img src="${person.photo}.png" alt="${person.name}">
+                </div>
+            </div>
+            <div class="racer-info">
+                <div class="info-item">
+                    <span class="info-label">name:</span>
+                    <span class="info-value">${person.name}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">id:</span>
+                    <span class="info-value">${person.id}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">class:</span>
+                    <span class="info-value class-value">${person.class}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">score:</span>
+                    <span class="info-value">${person.score}</span>
+                </div>
+            </div>
+            <div class="racer-signature">${person.name.split(' ')[0]}</div>
+
+            <div class="neon-stripe"></div>
+        </div>
+    `).join('');
+}
+
+function openBackOfficeProjects(personId) {
+    const person = backOfficeData.find(p => p.id === personId);
+    if (!person) return;
+
+    const projects = person.achievements && person.achievements.projects
+        ? person.achievements.projects
+        : [];
+
+    const projectsHTML = projects.length > 0
+        ? projects.map(p => `<li class="achievement-item">${p}</li>`).join('')
+        : '<li class="achievement-item empty">Пока нет отснятых проектов</li>';
+
+    const contentHTML = `
+        <div class="achievements-header">
+            <div class="achievements-photo">
+                <img src="${person.photo}.png" alt="${person.name}">
+            </div>
+            <div class="achievements-info">
+                <h2 class="achievements-name">${person.name}</h2>
+                <p class="achievements-id">ID: ${person.id}</p>
+                <p class="achievements-class">${person.class}</p>
+            </div>
+        </div>
+
+        <p class="backoffice-help" style="padding:0;margin-bottom:30px">${person.help}</p>
+
+        <div class="achievements-sections">
+            <div class="achievement-section">
+                <h3 class="section-title">
+                    <i class="fas fa-video"></i>
+                    Отснятые проекты (${projects.length})
+                </h3>
+                <ul class="achievement-list">
+                    ${projectsHTML}
+                </ul>
+            </div>
+            
+        </div>
+
+        <a href="${person.telegram}" target="_blank" rel="noopener noreferrer" class="backoffice-tg" style="margin:18px 0 0">
+            <i class="fab fa-telegram"></i> Telegram
+        </a>
+    `;
+
+    document.getElementById('backOfficeProjectsContent').innerHTML = contentHTML;
+
+    const modal = document.getElementById('backOfficeProjectsModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        modal.style.opacity = '1';
+        modal.style.visibility = 'visible';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeBackOfficeProjects(event) {
+    if (!event || event.target === event.currentTarget || event.target.closest('.modal-close')) {
+        const modal = document.getElementById('backOfficeProjectsModal');
+        if (modal) {
+            modal.style.opacity = '0';
+            modal.style.visibility = 'hidden';
+            document.body.style.overflow = '';
+        }
+    }
 }
 
 // === МОДАЛКА ДОСТИЖЕНИЙ ===
@@ -996,3 +1189,4 @@ window.addEventListener('resize', function () {
 });
 
 updateRacerScores();
+updateBackOfficeScores();
