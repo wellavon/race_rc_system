@@ -656,6 +656,39 @@ body {
     opacity: 0.5;
 }
 
+/* Текст «чем помогает» внутри модалки */
+.backoffice-help {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #cfcfcf;
+    font-family: 'ZenDotsKir', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* Кнопка Telegram — только в модалке, в стиле остальных элементов */
+.backoffice-tg {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid #0f0;
+    border-radius: 6px;
+    color: #0f0;
+    text-decoration: none;
+    font-family: 'ZenDotsKir', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
+}
+
+.backoffice-tg:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow: 0 0 18px rgba(0, 255, 0, 0.6);
+}
+
 /* ============================================================
    МОДАЛКА ДОСТИЖЕНИЙ
    ============================================================ */
